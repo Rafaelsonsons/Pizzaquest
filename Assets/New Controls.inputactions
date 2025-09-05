@@ -1,0 +1,54 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "Seleção",
+            "id": "f530476c-8811-4657-b19b-781e3d66756a",
+            "actions": [
+                {
+                    "name": "Selecionar",
+                    "type": "Button",
+                    "id": "d3407059-5510-4ce2-890c-4767e988bcde",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dano (Debug)",
+                    "type": "Button",
+                    "id": "276cdfc9-7a4e-4387-b270-72f5a9507f67",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a31ab7c3-bf68-47a2-8bb1-bf7233b19fdd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Selecionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63b232e5-9d91-47ff-a7b4-1e3908db19c2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dano (Debug)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
