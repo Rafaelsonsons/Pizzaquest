@@ -33,22 +33,72 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator SetupBattle()
 	{
-		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-		playerUnit = playerGO.GetComponent<Unit>();
+    Debug.Log("=== Iniciando SetupBattle() ===");
 
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-		enemyUnit = enemyGO.GetComponent<Unit>();
+    // Instanciar Player
+    GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+    playerUnit = playerGO.GetComponent<Unit>();
+    if (playerUnit == null)
+    {
+        Debug.LogError("❌ O prefab do Player não tem o componente 'Unit' no objeto raiz!");
+        yield break;
+    }
+    else
+    {
+        Debug.Log("✅ Player instanciado: " + playerUnit.unitName);
+    }
 
-		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+    // Instanciar Inimigo
+    GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+    enemyUnit = enemyGO.GetComponent<Unit>();
+    if (enemyUnit == null)
+    {
+        Debug.LogError("❌ O prefab do Enemy não tem o componente 'Unit' no objeto raiz!");
+        yield break;
+    }
+    else
+    {
+        Debug.Log("✅ Enemy instanciado: " + enemyUnit.unitName);
+    }
 
-		playerHUD.SetHUD(playerUnit);
-		enemyHUD.SetHUD(enemyUnit);
+    // Verificar DialogueText
+    if (dialogueText == null)
+    {
+        Debug.LogError("❌ dialogueText não foi atribuído no Inspector!");
+        yield break;
+    }
+    dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+    Debug.Log("✅ dialogueText configurado");
 
-		yield return new WaitForSeconds(2f);
+    // Verificar PlayerHUD
+    if (playerHUD == null)
+    {
+        Debug.LogError("❌ playerHUD não foi atribuído no Inspector!");
+        yield break;
+    }
+    playerHUD.SetHUD(playerUnit);
+    Debug.Log("✅ playerHUD configurado");
 
-		state = BattleState.PLAYERTURN;
-		PlayerTurn();
+    // Verificar EnemyHUD
+    if (enemyHUD == null)
+    {
+        Debug.LogError("❌ enemyHUD não foi atribuído no Inspector!");
+        yield break;
+    }
+    enemyHUD.SetHUD(enemyUnit);
+    Debug.Log("✅ enemyHUD configurado");
+
+    // Esperar 2 segundos
+    yield return new WaitForSeconds(2f);
+    Debug.Log("⏳ Espera de 2 segundos concluída");
+
+    // Transição de estado
+    state = BattleState.PLAYERTURN;
+    Debug.Log("➡️ Estado alterado para: " + state);
+
+    PlayerTurn();
 	}
+
 
 	IEnumerator PlayerAttack()
 	{
