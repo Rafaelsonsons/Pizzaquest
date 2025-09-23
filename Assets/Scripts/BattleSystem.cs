@@ -69,7 +69,7 @@ public class BattleSystem : MonoBehaviour
         Debug.LogError("❌ dialogueText não foi atribuído no Inspector!");
         yield break;
     }
-    dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+    dialogueText.text = " Um " + enemyUnit.unitName + " se aproxima...";
     Debug.Log("✅ dialogueText configurado");
 
     // Verificar PlayerHUD
@@ -107,7 +107,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD[0].SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+		dialogueText.text = "O ataque acertou!";
 
 		yield return new WaitForSeconds(2f);
 
@@ -124,7 +124,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator EnemyTurn()
 	{
-		dialogueText.text = enemyUnit.unitName + " attacks!";
+		dialogueText.text = enemyUnit.unitName + " ataca!";
 
 		yield return new WaitForSeconds(1f);
 
@@ -150,16 +150,16 @@ public class BattleSystem : MonoBehaviour
 	{
 		if(state == BattleState.WON)
 		{
-			dialogueText.text = "You won the battle!";
+			dialogueText.text = "VocÊ venceu!";
 		} else if (state == BattleState.LOST)
 		{
-			dialogueText.text = "You were defeated.";
+			dialogueText.text = "Você perdeu";
 		}
 	}
 
 	void PlayerTurn()
 	{
-		dialogueText.text = "Choose an action:";
+		dialogueText.text = "Escolha uma ação";
 	}
 
 	IEnumerator PlayerHeal()
@@ -167,7 +167,7 @@ public class BattleSystem : MonoBehaviour
 		playerUnit.Heal(5);
 
 		piromanteHUD.SetHP(playerUnit.currentHP);
-		dialogueText.text = "You feel renewed strength!";
+		dialogueText.text = "Você se sente renovado!";
 
 		yield return new WaitForSeconds(2f);
 
