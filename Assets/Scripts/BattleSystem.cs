@@ -8,13 +8,13 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public class BattleSystem : MonoBehaviour
 {
 
-	public GameObject playerPrefab;
-	public GameObject enemyPrefab;
+	public List<GameObject> playerPrefab;// A ordem é sempre [Faqueira, Sovador, Piromante]
+	public List<GameObject> enemyPrefab;
 
-	public Transform playerBattleStation;
-	public Transform enemyBattleStation;
+	public List<Transform> playerBattleStation;// A ordem é sempre [Faqueira, Sovador, Piromante]
+	public List<Transform> enemyBattleStation;
 
-	Unit playerUnit;
+	List<Unit> playerUnit;
 	Unit enemyUnit;
 
 	public Text dialogueText;
@@ -26,6 +26,8 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
 
+	public int actioncount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,23 +37,36 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator SetupBattle()
 	{
-    Debug.Log("=== Iniciando SetupBattle() ===");
+		Debug.Log("=== Iniciando SetupBattle() ===");
+
+
+	List<GameObject> playerGO = new List<GameObject>();
+	playerUnit = new List<Unit>();
 
     // Instanciar Player
-    GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-    playerUnit = playerGO.GetComponent<Unit>();
-    if (playerUnit == null)
-    {
-        Debug.LogError("❌ O prefab do Player não tem o componente 'Unit' no objeto raiz!");
-        yield break;
-    }
-    else
-    {
-        Debug.Log("✅ Player instanciado: " + playerUnit.unitName);
-    }
+    for (int i = 0; i < playerPrefab.Count; i++)
+	{
+		GameObject instance = Instantiate(playerPrefab[i], playerBattleStation[i]);
+        
+		playerGO.Add(instance);
+
+		Unit unit = instance.GetComponent<Unit>();
+		
+    	if (unit == null)
+   		{
+        	Debug.LogError("❌ O prefab do Player não tem o componente 'Unit' no objeto raiz!");
+        	yield break;
+    	}
+    	else
+		{
+			playerUnit.Add(unit);	
+        	Debug.Log("✅ Player instanciado: {unit.unitName}");
+    	}
+	}
+	
 
     // Instanciar Inimigo
-    GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+    GameObject enemyGO = Instantiate(enemyPrefab[0], enemyBattleStation[0]);
     enemyUnit = enemyGO.GetComponent<Unit>();
     if (enemyUnit == null)
     {
@@ -78,7 +93,22 @@ public class BattleSystem : MonoBehaviour
         Debug.LogError("❌ playerHUD não foi atribuído no Inspector!");
         yield break;
     }
-    piromanteHUD.SetHUD(playerUnit);
+	piromanteHUD.SetHUD(playerUnit[2]);
+	
+	if (sovadorHUD == null)
+    {
+        Debug.LogError("❌ playerHUD não foi atribuído no Inspector!");
+        yield break;
+    }
+	sovadorHUD.SetHUD(playerUnit[1]);
+	
+	if (faqueiroHUD == null)
+    {
+        Debug.LogError("❌ playerHUD não foi atribuído no Inspector!");
+        yield break;
+    }
+    faqueiroHUD.SetHUD(playerUnit[0]);
+
     Debug.Log("✅ playerHUD configurado");
 
     // Verificar EnemyHUD
@@ -104,11 +134,12 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
-		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+		bool isDead = enemyUnit.TakeDamage(playerUnit[actioncount].damage);
+
 
 		enemyHUD[0].SetHP(enemyUnit.currentHP);
-		dialogueText.text = "O ataque acertou!";
-
+		dialogueText.text = playerUnit[actioncount].unitName + " atacou e causou " + playerUnit[actioncount].damage + " de dano!";
+		actioncount += 1;
 		yield return new WaitForSeconds(2f);
 
 		if(isDead)
@@ -117,9 +148,13 @@ public class BattleSystem : MonoBehaviour
 			EndBattle();
 		} else
 		{
-			state = BattleState.ENEMYTURN;
-			StartCoroutine(EnemyTurn());
+			if (actioncount == 3)
+			{
+				state = BattleState.ENEMYTURN;
+				StartCoroutine(EnemyTurn());
+			} 
 		}
+		
 	}
 
 	IEnumerator EnemyTurn()
@@ -128,9 +163,9 @@ public class BattleSystem : MonoBehaviour
 
 		yield return new WaitForSeconds(1f);
 
-		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+		bool isDead = playerUnit[2].TakeDamage(enemyUnit.damage);
 
-		piromanteHUD.SetHP(playerUnit.currentHP);
+		piromanteHUD.SetHP(playerUnit[2].currentHP);
 
 		yield return new WaitForSeconds(1f);
 
@@ -159,14 +194,15 @@ public class BattleSystem : MonoBehaviour
 
 	void PlayerTurn()
 	{
+		actioncount = 0;
 		dialogueText.text = "Escolha uma ação";
 	}
 
 	IEnumerator PlayerHeal()
 	{
-		playerUnit.Heal(5);
+		playerUnit[2].Heal(5);
 
-		piromanteHUD.SetHP(playerUnit.currentHP);
+		piromanteHUD.SetHP(playerUnit[2].currentHP);
 		dialogueText.text = "Você se sente renovado!";
 
 		yield return new WaitForSeconds(2f);
