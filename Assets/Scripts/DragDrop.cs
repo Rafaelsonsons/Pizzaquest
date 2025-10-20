@@ -7,27 +7,44 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     public Image image;
+    public bool isDraggable = true;
     [HideInInspector] public Transform parentAfterDrag;
+    public Item item;
+
+    private void Start()
+    {
+        image = GetComponent<Image>();
+        item = new Item();
+    }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("OnBeginDrag");
-        parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
-        transform.SetAsLastSibling();
-        image.raycastTarget = false;
+        if (isDraggable)
+        {
+            Debug.Log("OnBeginDrag");
+            parentAfterDrag = transform.parent;
+            transform.SetParent(transform.root);
+            transform.SetAsLastSibling();
+            image.raycastTarget = false;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
-        transform.position = Input.mousePosition;
-    }
+        if (isDraggable)
+        {
+            Debug.Log("OnDrag");
+            transform.position = Input.mousePosition;
+        }
+   }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+        if (isDraggable)
+        {
+            Debug.Log("OnEndDrag");
+            image.raycastTarget = true;
+        }
         transform.SetParent(parentAfterDrag);
-        image.raycastTarget = true;
     }
 
 }
