@@ -10,11 +10,13 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public bool isDraggable = true;
     [HideInInspector] public Transform parentAfterDrag;
     public Item item;
+    public NewBehaviourScript NewBehaviourScript;
 
     private void Start()
     {
         image = GetComponent<Image>();
         item = new Item();
+        NewBehaviourScript = GetComponent<NewBehaviourScript>();
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
