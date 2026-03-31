@@ -271,6 +271,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 507d977e1497ada48bf3aa9aa55cc5ed, type: 3}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -280,6 +284,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -323,15 +331,15 @@ RectTransform:
   m_GameObject: {fileID: 152632444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.6, y: 3.6, z: 1}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1552103267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 183.3454, y: 143.3382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152632446
 MonoBehaviour:
@@ -346,16 +354,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -558,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c56293c0069bee740b48e8795e076dc9, type: 3}
+      objectReference: {fileID: 21300000, guid: 18f15e1dbfc6a6d458f029ac0429398c, type: 3}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -569,6 +577,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -726,7 +738,7 @@ RectTransform:
   m_GameObject: {fileID: 539699413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1205484958}
@@ -804,7 +816,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 13.514458
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1338,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8048c1e1ac661a04eb77ec1daed209b6, type: 3}
+      objectReference: {fileID: 21300000, guid: c56293c0069bee740b48e8795e076dc9, type: 3}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1349,6 +1361,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1499,8 +1515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15ada3e67357c044b2322e0fcf9da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicial: {fileID: 21300000, guid: c56293c0069bee740b48e8795e076dc9, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  inicial: {fileID: 21300000, guid: 18f15e1dbfc6a6d458f029ac0429398c, type: 3}
+  final: {fileID: 21300000, guid: bbfc7daa198f46b459bd72869cbb092a, type: 3}
   image: {fileID: 0}
 --- !u!114 &1272566847 stripped
 MonoBehaviour:
@@ -1691,6 +1707,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1711,6 +1731,8 @@ GameObject:
   - component: {fileID: 1552103266}
   - component: {fileID: 1552103265}
   - component: {fileID: 1552103264}
+  - component: {fileID: 1552103269}
+  - component: {fileID: 1552103268}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1793,8 +1815,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 539699414}
   - {fileID: 152632445}
+  - {fileID: 539699414}
   - {fileID: 1977941613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1803,6 +1825,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1552103268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552103263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bad3442c1303e1843b7441626be013b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1552103269
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552103263}
+  m_CullTransparentMesh: 1
 --- !u!224 &1750011597 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3262931809588232544, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
@@ -1831,8 +1891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15ada3e67357c044b2322e0fcf9da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicial: {fileID: 21300000, guid: eadcbc87c8ef09a41ae6012707b3d60c, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  inicial: {fileID: 21300000, guid: 507d977e1497ada48bf3aa9aa55cc5ed, type: 3}
+  final: {fileID: 21300000, guid: 9ef5836205761a44e8b84c3bd4e13bf8, type: 3}
   image: {fileID: 0}
 --- !u!1001 &1822647400
 PrefabInstance:
@@ -1985,7 +2045,7 @@ PrefabInstance:
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eadcbc87c8ef09a41ae6012707b3d60c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8048c1e1ac661a04eb77ec1daed209b6, type: 3}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1996,6 +2056,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2023,8 +2087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15ada3e67357c044b2322e0fcf9da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicial: {fileID: 21300000, guid: eadcbc87c8ef09a41ae6012707b3d60c, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  inicial: {fileID: 21300000, guid: eb43a3dde9632df49b4e01dd3bdb7358, type: 3}
+  final: {fileID: 21300000, guid: ac6edc39c5d1b6940b9d243d8884cc84, type: 3}
   image: {fileID: 0}
 --- !u!1 &1887040705
 GameObject:
@@ -2158,9 +2222,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1552103267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.39574683, y: 0.5}
+  m_AnchorMax: {x: 0.39574683, y: 0.5}
+  m_AnchoredPosition: {x: 4.595, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1977941614
@@ -2232,8 +2296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15ada3e67357c044b2322e0fcf9da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicial: {fileID: 21300000, guid: 8048c1e1ac661a04eb77ec1daed209b6, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  inicial: {fileID: 21300000, guid: c56293c0069bee740b48e8795e076dc9, type: 3}
+  final: {fileID: 21300000, guid: 55f2ab13a61760d49ba53bba77659155, type: 3}
   image: {fileID: 0}
 --- !u!224 &2044393852 stripped
 RectTransform:
@@ -2264,7 +2328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicial: {fileID: 21300000, guid: 3987867853b519e4eb5b657ff0265423, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  final: {fileID: 21300000, guid: 3120361abc8495b4c9bb7619015ed019, type: 3}
   image: {fileID: 0}
 --- !u!1 &2115384574 stripped
 GameObject:
@@ -2283,8 +2347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15ada3e67357c044b2322e0fcf9da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicial: {fileID: 21300000, guid: eadcbc87c8ef09a41ae6012707b3d60c, type: 3}
-  final: {fileID: 21300000, guid: 3f3a5ea5ace79004eba15d892dcc01a3, type: 3}
+  inicial: {fileID: 21300000, guid: 8048c1e1ac661a04eb77ec1daed209b6, type: 3}
+  final: {fileID: 21300000, guid: 364e5669b987dae4bac7c008a6874481, type: 3}
   image: {fileID: 0}
 --- !u!1 &2139159683
 GameObject:
@@ -2543,7 +2607,7 @@ PrefabInstance:
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: eb43a3dde9632df49b4e01dd3bdb7358, type: 3}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2558,6 +2622,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294759257348210655, guid: 53b0827fe15d4794b96e1d8f2aa842b8, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
